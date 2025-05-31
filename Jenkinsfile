@@ -9,12 +9,13 @@ pipeline {
     environment {
         SONAR_HOST_URL = 'http://localhost:9000'
         SONAR_TOKEN = credentials('sonar-token')
+        COMPOSER_PROCESS_TIMEOUT = '1800' // 30 minutos
     }
 
     stages {
         stage('Install Dependencies') {
             steps {
-                sh 'composer install'
+                sh 'composer install --no-interaction --prefer-dist --no-progress --no-suggest'
             }
         }
 
@@ -35,7 +36,9 @@ pipeline {
                             -Dsonar.sources=app \
                             -Dsonar.tests=tests \
                             -Dsonar.php.coverage.reportPaths=coverage/clover.xml \
-                            -Dsonar.php.tests.reportPath=coverage/junit.xml
+                            -Dsonar.php.tests.reportPath=coverage/junit.xml \
+                            -Dsonar.host.url=$SONAR_HOST_URL \
+                            -Dsonar.login=$SONAR_TOKEN
                     '''
                 }
             }
