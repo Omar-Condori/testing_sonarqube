@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'composer:2.6'
+            args '-u root:root'
+        }
+    }
 
     environment {
         SONAR_HOST_URL = 'http://localhost:9000'
@@ -16,7 +21,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh '''
-                    php artisan test --coverage-clover=coverage/clover.xml --log-junit=coverage/junit.xml
+                    ./vendor/bin/phpunit --coverage-clover=coverage/clover.xml --log-junit=coverage/junit.xml
                 '''
             }
         }
