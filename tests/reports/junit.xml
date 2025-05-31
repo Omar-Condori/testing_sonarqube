@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/phpunit.xml" tests="28" assertions="135" errors="8" failures="0" skipped="0" time="0.735474">
+    <testsuite name="Unit" tests="12" assertions="29" errors="2" failures="0" skipped="0" time="0.391171">
+      <testsuite name="Tests\Unit\ExampleTest" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/ExampleTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.003325">
+        <testcase name="test_that_true_is_true" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/ExampleTest.php" line="12" class="Tests\Unit\ExampleTest" classname="Tests.Unit.ExampleTest" assertions="1" time="0.003325"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\MunicipalidadRepositoryTest" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/MunicipalidadRepositoryTest.php" tests="5" assertions="9" errors="1" failures="0" skipped="0" time="0.294187">
+        <testcase name="test_can_get_all_municipalidades" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/MunicipalidadRepositoryTest.php" line="22" class="Tests\Unit\MunicipalidadRepositoryTest" classname="Tests.Unit.MunicipalidadRepositoryTest" assertions="1" time="0.215001"/>
+        <testcase name="test_can_get_municipalidad_by_id" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/MunicipalidadRepositoryTest.php" line="32" class="Tests\Unit\MunicipalidadRepositoryTest" classname="Tests.Unit.MunicipalidadRepositoryTest" assertions="2" time="0.018992"/>
+        <testcase name="test_can_create_municipalidad" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/MunicipalidadRepositoryTest.php" line="42" class="Tests\Unit\MunicipalidadRepositoryTest" classname="Tests.Unit.MunicipalidadRepositoryTest" assertions="3" time="0.017549"/>
+        <testcase name="test_can_update_municipalidad" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/MunicipalidadRepositoryTest.php" line="60" class="Tests\Unit\MunicipalidadRepositoryTest" classname="Tests.Unit.MunicipalidadRepositoryTest" assertions="3" time="0.018208"/>
+        <testcase name="test_can_delete_municipalidad" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/MunicipalidadRepositoryTest.php" line="75" class="Tests\Unit\MunicipalidadRepositoryTest" classname="Tests.Unit.MunicipalidadRepositoryTest" assertions="0" time="0.024438">
+          <error type="Error">Tests\Unit\MunicipalidadRepositoryTest::test_can_delete_municipalidad
+Error: Call to a member function each() on null
+
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/app/Repository/MunicipalidadRepository.php:127
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/MunicipalidadRepositoryTest.php:79</error>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Unit\MunicipalidadTest" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/Unit/MunicipalidadTest.php" tests="6" assertions="19" errors="1" failures="0" skipped="0" time="0.093659">
+        <testcase name="puede_crear_municipalidad_con_datos_validos" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/Unit/MunicipalidadTest.php" line="15" class="Tests\Unit\MunicipalidadTest" classname="Tests.Unit.MunicipalidadTest" assertions="4" time="0.016828"/>
+        <testcase name="nombre_completo_accessor_funciona_correctamente" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/Unit/MunicipalidadTest.php" line="41" class="Tests\Unit\MunicipalidadTest" classname="Tests.Unit.MunicipalidadTest" assertions="1" time="0.014454"/>
+        <testcase name="scope_activos_filtra_correctamente" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/Unit/MunicipalidadTest.php" line="55" class="Tests\Unit\MunicipalidadTest" classname="Tests.Unit.MunicipalidadTest" assertions="2" time="0.016182"/>
+        <testcase name="scope_por_departamento_filtra_correctamente" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/Unit/MunicipalidadTest.php" line="68" class="Tests\Unit\MunicipalidadTest" classname="Tests.Unit.MunicipalidadTest" assertions="2" time="0.015760"/>
+        <testcase name="reglas_de_validacion_son_correctas" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/Unit/MunicipalidadTest.php" line="81" class="Tests\Unit\MunicipalidadTest" classname="Tests.Unit.MunicipalidadTest" assertions="6" time="0.015538">
+          <error type="TypeError">Tests\Unit\MunicipalidadTest::reglas_de_validacion_son_correctas
+TypeError: PHPUnit\Framework\Assert::assertStringContainsString(): Argument #2 ($haystack) must be of type string, array given, called in /Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/Unit/MunicipalidadTest.php on line 92
+
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/Unit/MunicipalidadTest.php:92</error>
+        </testcase>
+        <testcase name="cast_de_tipos_funciona_correctamente" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Unit/Unit/MunicipalidadTest.php" line="97" class="Tests\Unit\MunicipalidadTest" classname="Tests.Unit.MunicipalidadTest" assertions="4" time="0.014896"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Feature" tests="16" assertions="106" errors="6" failures="0" skipped="0" time="0.344303">
+      <testsuite name="Tests\Feature\DashboardControllerTest" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/DashboardControllerTest.php" tests="3" assertions="15" errors="0" failures="0" skipped="0" time="0.093983">
+        <testcase name="summary_returns_empty_counts_when_no_data" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/DashboardControllerTest.php" line="29" class="Tests\Feature\DashboardControllerTest" classname="Tests.Feature.DashboardControllerTest" assertions="2" time="0.042254"/>
+        <testcase name="summary_returns_correct_counts_and_users_by_role" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/DashboardControllerTest.php" line="52" class="Tests\Feature\DashboardControllerTest" classname="Tests.Feature.DashboardControllerTest" assertions="10" time="0.027291"/>
+        <testcase name="summary_returns_recent_users_ordered_by_creation_date" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/DashboardControllerTest.php" line="76" class="Tests\Feature\DashboardControllerTest" classname="Tests.Feature.DashboardControllerTest" assertions="3" time="0.024439"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\ExampleTest" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/ExampleTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.013750">
+        <testcase name="test_the_application_returns_a_successful_response" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/ExampleTest.php" line="13" class="Tests\Feature\ExampleTest" classname="Tests.Feature.ExampleTest" assertions="1" time="0.013750"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\MunicipalidadCrudTest" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php" tests="12" assertions="90" errors="6" failures="0" skipped="0" time="0.236569">
+        <testcase name="puede_mostrar_municipalidad_especifica" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php" line="22" class="Tests\Feature\MunicipalidadCrudTest" classname="Tests.Feature.MunicipalidadCrudTest" assertions="2" time="0.017639"/>
+        <testcase name="puede_actualizar_municipalidad_existente" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php" line="44" class="Tests\Feature\MunicipalidadCrudTest" classname="Tests.Feature.MunicipalidadCrudTest" assertions="3" time="0.023852">
+          <error type="Illuminate\Database\QueryException">Tests\Feature\MunicipalidadCrudTest::puede_actualizar_municipalidad_existente
+Illuminate\Database\QueryException: SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "municipalidads" does not exist
+LINE 1: select exists(select * from "municipalidads" where ("id" = $...
+                                    ^ (Connection: pgsql, SQL: select exists(select * from "municipalidads" where ("id" = 17 and "nombre" = Nombre Actualizado and "alcalde" = Nuevo Alcalde)) as "exists")
+
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Database/Connection.php:822
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Database/Connection.php:776
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Database/Connection.php:395
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php:3479
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Testing/Constraints/HasInDatabase.php:55
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithDatabase.php:36
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php:72</error>
+        </testcase>
+        <testcase name="puede_eliminar_municipalidad" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php" line="80" class="Tests\Feature\MunicipalidadCrudTest" classname="Tests.Feature.MunicipalidadCrudTest" assertions="3" time="0.016945">
+          <error type="Illuminate\Database\QueryException">Tests\Feature\MunicipalidadCrudTest::puede_eliminar_municipalidad
+Illuminate\Database\QueryException: SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "municipalidads" does not exist
+LINE 1: select exists(select * from "municipalidads" where ("id" = $...
+                                    ^ (Connection: pgsql, SQL: select exists(select * from "municipalidads" where ("id" = 18)) as "exists")
+
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Database/Connection.php:822
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Database/Connection.php:776
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Database/Connection.php:395
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php:3479
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Testing/Constraints/HasInDatabase.php:55
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithDatabase.php:64
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php:92</error>
+        </testcase>
+        <testcase name="puede_filtrar_municipalidades_por_departamento" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php" line="98" class="Tests\Feature\MunicipalidadCrudTest" classname="Tests.Feature.MunicipalidadCrudTest" assertions="4" time="0.019111"/>
+        <testcase name="puede_filtrar_municipalidades_activas" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php" line="116" class="Tests\Feature\MunicipalidadCrudTest" classname="Tests.Feature.MunicipalidadCrudTest" assertions="4" time="0.016768"/>
+        <testcase name="puede_buscar_municipalidades_por_texto" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php" line="134" class="Tests\Feature\MunicipalidadCrudTest" classname="Tests.Feature.MunicipalidadCrudTest" assertions="3" time="0.015856"/>
+        <testcase name="retorna_404_para_municipalidad_inexistente" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php" line="157" class="Tests\Feature\MunicipalidadCrudTest" classname="Tests.Feature.MunicipalidadCrudTest" assertions="0" time="0.015347">
+          <error type="Illuminate\Database\Eloquent\ModelNotFoundException">Tests\Feature\MunicipalidadCrudTest::retorna_404_para_municipalidad_inexistente
+Illuminate\Database\Eloquent\ModelNotFoundException: No query results for model [App\Models\Municipalidad] 99999
+
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:599
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2449
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:2465
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/app/Http/Controllers/API/PageGeneral/MunicipalidadController.php:40
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php:46
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Route.php:265
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Route.php:211
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php:808
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:169
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php:25
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:169
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:126
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php:24
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:126
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php:807
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php:786
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php:750
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php:739
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:200
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:169
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php:21
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php:31
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php:21
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php:51
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php:27
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php:109
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php:61
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php:58
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php:22
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php:26
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:126
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:175
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:144
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php:607
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php:573
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php:381
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php:159</error>
+        </testcase>
+        <testcase name="no_permite_codigo_duplicado" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php" line="165" class="Tests\Feature\MunicipalidadCrudTest" classname="Tests.Feature.MunicipalidadCrudTest" assertions="0" time="0.018233">
+          <error type="Illuminate\Validation\ValidationException">Tests\Feature\MunicipalidadCrudTest::no_permite_codigo_duplicado
+Illuminate\Validation\ValidationException: The codigo has already been taken.
+
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Support/helpers.php:423
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Validation/Validator.php:557
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Providers/FoundationServiceProvider.php:155
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php:126
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/app/Http/Controllers/API/PageGeneral/MunicipalidadController.php:51
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php:46
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Route.php:265
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Route.php:211
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php:808
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:169
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php:25
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:169
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:126
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php:24
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:126
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php:807
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php:786
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php:750
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php:739
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:200
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:169
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php:21
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php:31
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php:21
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php:51
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php:27
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php:109
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php:61
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php:58
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php:22
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php:26
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:126
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:175
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:144
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php:607
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php:573
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php:411
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php:177</error>
+        </testcase>
+        <testcase name="paginacion_funciona_correctamente" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php" line="184" class="Tests\Feature\MunicipalidadCrudTest" classname="Tests.Feature.MunicipalidadCrudTest" assertions="5" time="0.039938"/>
+        <testcase name="puede_listar_municipalidades" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php" line="200" class="Tests\Feature\MunicipalidadCrudTest" classname="Tests.Feature.MunicipalidadCrudTest" assertions="55" time="0.016669"/>
+        <testcase name="puede_crear_municipalidad_con_datos_validos" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php" line="240" class="Tests\Feature\MunicipalidadCrudTest" classname="Tests.Feature.MunicipalidadCrudTest" assertions="11" time="0.019761">
+          <error type="Illuminate\Database\QueryException">Tests\Feature\MunicipalidadCrudTest::puede_crear_municipalidad_con_datos_validos
+Illuminate\Database\QueryException: SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "municipalidads" does not exist
+LINE 1: select exists(select * from "municipalidads" where ("codigo"...
+                                    ^ (Connection: pgsql, SQL: select exists(select * from "municipalidads" where ("codigo" = TEST001 and "nombre" = Municipalidad Test)) as "exists")
+
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Database/Connection.php:822
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Database/Connection.php:776
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Database/Connection.php:395
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php:3479
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Testing/Constraints/HasInDatabase.php:55
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithDatabase.php:36
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php:276</error>
+        </testcase>
+        <testcase name="falla_crear_municipalidad_con_datos_invalidos" file="/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php" line="283" class="Tests\Feature\MunicipalidadCrudTest" classname="Tests.Feature.MunicipalidadCrudTest" assertions="0" time="0.016451">
+          <error type="Illuminate\Validation\ValidationException">Tests\Feature\MunicipalidadCrudTest::falla_crear_municipalidad_con_datos_invalidos
+Illuminate\Validation\ValidationException: The nombre field is required. (and 5 more errors)
+
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Support/helpers.php:423
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Validation/Validator.php:557
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Providers/FoundationServiceProvider.php:155
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php:126
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/app/Http/Controllers/API/PageGeneral/MunicipalidadController.php:51
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php:46
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Route.php:265
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Route.php:211
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php:808
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:169
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php:25
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:169
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:126
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php:24
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:126
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php:807
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php:786
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php:750
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php:739
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:200
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:169
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php:21
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php:31
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php:21
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php:51
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php:27
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php:109
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php:61
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php:58
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php:22
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php:26
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:208
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:126
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:175
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:144
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php:607
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php:573
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php:411
+/Users/omarcondori/Documents/PaginaWeb/capachica-project/turismo-backend/tests/Feature/Feature/MunicipalidadCrudTest.php:292</error>
+        </testcase>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
