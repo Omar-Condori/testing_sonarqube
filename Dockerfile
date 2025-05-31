@@ -36,7 +36,9 @@ RUN cp .env.example .env || true
 RUN composer install --optimize-autoloader --no-dev
 
 # Claves, symlinks y migraciones
-RUN php artisan key:generate \
+RUN rm -f database/database.sqlite \
+ && touch database/database.sqlite \
+ && php artisan key:generate \
  && php artisan storage:link \
  && php artisan migrate --force \
  && php artisan db:seed --force
