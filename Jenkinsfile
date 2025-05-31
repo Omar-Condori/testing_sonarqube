@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'composer:2.6'
+            image 'turismo-backend-ci'
             args '-u root:root'
         }
     }
