@@ -1,36 +1,45 @@
 pipeline {
     agent any
 
-    tools {
-        sonarQubeScanner 'SonarScanner'  // Nombre registrado en Jenkins > Global Tool Configuration
-    }
-
     environment {
-        SONARQUBE_SERVER = 'SonarQube_Local'  // Nombre configurado en Jenkins > Configure System
+        SONAR_HOST_URL = 'http://localhost:9000'
+        SONAR_TOKEN = credentials('sonar-token')
     }
 
     stages {
-        stage('Install dependencies') {
+        stage('Install Dependencies') {
             steps {
-                echo 'Instalando dependencias...'
                 sh 'composer install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                echo 'Ejecutando pruebas...'
-                sh './vendor/bin/phpunit --log-junit test-results.xml'
+                sh '''
+                    php artisan test --coverage-clover=coverage/clover.xml --log-junit=coverage/junit.xml
+                '''
             }
         }
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('SonarQube_Local') {
-                    def scannerHome = tool 'SonarScanner'
-                    sh "${scannerHome}/bin/sonar-scanner"
+                withSonarQubeEnv('SonarQube') {
+                    sh '''
+                        sonar-scanner \
+                            -Dsonar.projectKey=turismo-backend \
+                            -Dsonar.sources=app \
+                            -Dsonar.tests=tests \
+                            -Dsonar.php.coverage.reportPaths=coverage/clover.xml \
+                            -Dsonar.php.tests.reportPath=coverage/junit.xml
+                    '''
                 }
             }
+        }
+    }
+
+    post {
+        always {
+            cleanWs()
         }
     }
 }
