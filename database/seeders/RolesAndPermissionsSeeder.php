@@ -30,27 +30,36 @@ class RolesAndPermissionsSeeder extends Seeder
         ];
 
         foreach ($permissions as $permission) {
-            Permission::firstOrCreate(['name' => $permission]);
+            Permission::firstOrCreate([
+                'name' => $permission,
+                'guard_name' => 'web',
+            ]);
         }
 
         // Crear roles y asignar permisos
-        $adminRole = Role::firstOrCreate(['name' => 'admin']);
-        $adminRole->givePermissionTo(Permission::all());
+        $adminRole = Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
+        $adminRole->syncPermissions(Permission::all());
 
-        $operatorRole = Role::firstOrCreate(['name' => 'operator']);
-        $operatorRole->givePermissionTo(['user_read', 'role_read', 'permission_read']);
-
-        $userRole = Role::firstOrCreate(['name' => 'user']);
-        
-        // Crear usuario admin
-        $admin = User::create([
-            'name' => 'Admin',
-            'first_name' => 'Super',
-            'last_name' => 'Admin',
-            'email' => 'admin@turismo.com',
-            'password' => Hash::make('password123'),
+        $operatorRole = Role::firstOrCreate(['name' => 'operator', 'guard_name' => 'web']);
+        $operatorRole->syncPermissions([
+            'user_read', 'role_read', 'permission_read'
         ]);
-        
-        $admin->assignRole('admin');
+
+        $userRole = Role::firstOrCreate(['name' => 'user', 'guard_name' => 'web']);
+
+        // Crear usuario admin solo si no existe
+        $admin = User::firstOrCreate(
+            ['email' => 'admin@turismo.com'],
+            [
+                'name' => 'Admin',
+                'first_name' => 'Super',
+                'last_name' => 'Admin',
+                'password' => Hash::make('password123'),
+            ]
+        );
+
+        if (!$admin->hasRole('admin')) {
+            $admin->assignRole('admin');
+        }
     }
 }
