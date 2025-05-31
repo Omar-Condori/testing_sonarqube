@@ -149,6 +149,10 @@ class DatabaseSeeder extends Seeder
     {
         Municipalidad::create([
             'nombre' => 'Municipalidad Distrital de Capachica',
+            'codigo' => 'MUN-CAP-001',
+            'departamento' => 'Puno',
+            'provincia' => 'Puno',
+            'distrito' => 'Capachica',
             'descripcion' => 'La Municipalidad Distrital de Capachica es una institución pública que vela por el desarrollo sostenible del distrito a través de la promoción del turismo, conservación del medio ambiente y mejora de la calidad de vida de sus pobladores.',
             'red_facebook' => 'https://facebook.com/municipalidadcapachica',
             'red_instagram' => 'https://instagram.com/municapachica',
