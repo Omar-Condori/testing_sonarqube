@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-=======
-// database/factories/MunicipalidadFactory.php
->>>>>>> 3996b64 (Cambios locales antes de rebase)
 
 namespace Database\Factories;
 
@@ -15,30 +11,6 @@ class MunicipalidadFactory extends Factory
 
     public function definition(): array
     {
-<<<<<<< HEAD
-        return [
-            'nombre' => $this->faker->company,
-            'descripcion' => $this->faker->paragraph,
-            'red_facebook' => $this->faker->url,
-            'red_instagram' => $this->faker->url,
-            'red_youtube' => $this->faker->url,
-            'coordenadas_x' => $this->faker->latitude,
-            'coordenadas_y' => $this->faker->longitude,
-            'frase' => $this->faker->sentence,
-            'comunidades' => $this->faker->paragraph,
-            'historiafamilias' => $this->faker->text(300),
-            'historiacapachica' => $this->faker->text(300),
-            'comite' => $this->faker->paragraph,
-            'mision' => $this->faker->paragraph,
-            'vision' => $this->faker->paragraph,
-            'valores' => $this->faker->words(5, true),
-            'ordenanzamunicipal' => $this->faker->sentence,
-            'alianzas' => $this->faker->sentence,
-            'correo' => $this->faker->safeEmail,
-            'horariodeatencion' => $this->faker->regexify('Lun a Vie de 08:00 a 17:00'),
-        ];
-    }
-=======
         $departamentos = [
             'Lima' => ['Lima', 'Callao'],
             'Arequipa' => ['Arequipa', 'Camaná'],
@@ -63,7 +35,24 @@ class MunicipalidadFactory extends Factory
             'email' => $this->faker->companyEmail,
             'direccion' => $this->faker->address,
             'activo' => true,
-            'descripcion' => $this->faker->paragraph
+            'descripcion' => $this->faker->paragraph,
+            'red_facebook' => $this->faker->url,
+            'red_instagram' => $this->faker->url,
+            'red_youtube' => $this->faker->url,
+            'coordenadas_x' => $this->faker->latitude,
+            'coordenadas_y' => $this->faker->longitude,
+            'frase' => $this->faker->sentence,
+            'comunidades' => $this->faker->paragraph,
+            'historiafamilias' => $this->faker->text(300),
+            'historiacapachica' => $this->faker->text(300),
+            'comite' => $this->faker->paragraph,
+            'mision' => $this->faker->paragraph,
+            'vision' => $this->faker->paragraph,
+            'valores' => $this->faker->words(5, true),
+            'ordenanzamunicipal' => $this->faker->sentence,
+            'alianzas' => $this->faker->sentence,
+            'correo' => $this->faker->safeEmail,
+            'horariodeatencion' => $this->faker->regexify('Lun a Vie de 08:00 a 17:00')
         ];
     }
 
@@ -80,5 +69,4 @@ class MunicipalidadFactory extends Factory
             'activo' => false,
         ]);
     }
->>>>>>> 3996b64 (Cambios locales antes de rebase)
 }

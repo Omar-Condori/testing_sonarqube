@@ -107,4 +107,4 @@ class MunicipalidadTest extends TestCase
         $this->assertIsBool($municipalidad->activo);
         $this->assertEquals(1000000.75, $municipalidad->presupuesto);
     }
-}
+} 
