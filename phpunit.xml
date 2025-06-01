@@ -14,10 +14,7 @@
             <directory>tests/Feature</directory>
         </testsuite>
     </testsuites>
-    <coverage processUncoveredFiles="true">
-        <include>
-            <directory>app</directory>
-        </include>
+    <coverage>
         <report>
             <clover outputFile="coverage/clover.xml"/>
         </report>

@@ -124,7 +124,7 @@ class MunicipalidadRepository
         
         // Al eliminar la municipalidad, debemos eliminar también sus sliders
         // Esto se puede hacer con eventos de modelo o manualmente aquí
-        $municipalidad->sliders->each(function ($slider) {
+        ($municipalidad->sliders ?? collect())->each(function ($slider) {
             app(SliderRepository::class)->delete($slider->id);
         });
         
