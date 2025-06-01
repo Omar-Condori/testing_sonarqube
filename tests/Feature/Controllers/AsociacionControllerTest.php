@@ -160,31 +160,28 @@ class AsociacionControllerTest extends TestCase
     #[Test]
     public function admin_puede_crear_nueva_asociacion()
     {
-        // Arrange
         Sanctum::actingAs($this->adminUser);
         
-        $data = [
-            'nombre' => $this->faker->company,
-            'descripcion' => $this->faker->text,
-            'telefono' => $this->faker->phoneNumber,
-            'email' => $this->faker->email,
+        $datos = [
+            'nombre' => 'Nueva Asociación',
+            'email' => 'test@asociacion.com',
             'municipalidad_id' => $this->municipalidad->id,
+            'descripcion' => 'Descripción de prueba',
+            'telefono' => '123456789',
             'estado' => true
         ];
 
-        // Act
-        $response = $this->postJson('/api/asociaciones', $data);
+        $response = $this->postJson('/api/asociaciones', $datos);
 
-        // Assert
-        $response->assertStatus(Response::HTTP_CREATED)
+        $response->assertStatus(201)
                 ->assertJson([
                     'success' => true,
                     'message' => 'Asociación creada exitosamente'
                 ]);
 
         $this->assertDatabaseHas('asociaciones', [
-            'nombre' => $data['nombre'],
-            'email' => $data['email']
+            'nombre' => 'Nueva Asociación',
+            'email' => 'test@asociacion.com'
         ]);
     }
 
@@ -248,13 +245,15 @@ class AsociacionControllerTest extends TestCase
     /** @test */
     public function falla_validacion_con_email_invalido()
     {
+        Sanctum::actingAs($this->adminUser);
+        
         $datos = [
             'nombre' => 'Asociación Test',
             'email' => 'email-invalido',
-            'municipalidad_id' => 1
+            'municipalidad_id' => $this->municipalidad->id
         ];
 
-        $response = $this->postJson('/api/v1/asociaciones', $datos);
+        $response = $this->postJson('/api/asociaciones', $datos);
 
         $response->assertStatus(422)
                 ->assertJsonValidationErrors(['email']);
@@ -263,13 +262,15 @@ class AsociacionControllerTest extends TestCase
     /** @test */
     public function falla_validacion_con_municipalidad_inexistente()
     {
+        Sanctum::actingAs($this->adminUser);
+        
         $datos = [
             'nombre' => 'Asociación Test',
             'email' => 'test@example.com',
             'municipalidad_id' => 99999
         ];
 
-        $response = $this->postJson('/api/v1/asociaciones', $datos);
+        $response = $this->postJson('/api/asociaciones', $datos);
 
         $response->assertStatus(422)
                 ->assertJsonValidationErrors(['municipalidad_id']);

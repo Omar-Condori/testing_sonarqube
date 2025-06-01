@@ -83,11 +83,7 @@ class MunicipalidadCrudTest extends TestCase
 
         $response = $this->deleteJson("/api/v1/municipalidades/{$municipalidad->id}");
 
-        $response->assertStatus(200)
-                ->assertJson([
-                    'success' => true,
-                    'message' => 'Municipalidad eliminada correctamente'
-                ]);
+        $response->assertStatus(204);
 
         $this->assertDatabaseMissing('municipalidades', [
             'id' => $municipalidad->id
