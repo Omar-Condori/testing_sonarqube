@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
       supervisor \
       git \
       unzip \
+      wget \
     && docker-php-ext-install pdo pdo_pgsql zip gd mbstring xml \
     && pecl install pcov \
     && docker-php-ext-enable pcov \

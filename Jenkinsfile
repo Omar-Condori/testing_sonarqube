@@ -30,6 +30,12 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 sh '''
+                    # Instalar sonar-scanner
+                    wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.8.0.2856-linux.zip
+                    unzip sonar-scanner-cli-4.8.0.2856-linux.zip
+                    export PATH=$PATH:$(pwd)/sonar-scanner-4.8.0.2856-linux/bin
+                    
+                    # Ejecutar análisis
                     sonar-scanner \
                         -Dsonar.projectKey=turismo-backend \
                         -Dsonar.sources=app \
