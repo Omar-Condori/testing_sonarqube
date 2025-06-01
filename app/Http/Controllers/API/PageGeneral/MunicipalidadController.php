@@ -52,43 +52,65 @@ class MunicipalidadController extends Controller
 
     public function store(Request $request)
     {
-        $v = $request->validate(Municipalidad::rules());
-        $m = Municipalidad::create($v);
+        try {
+            $v = $request->validate(Municipalidad::rules());
+            $m = Municipalidad::create($v);
 
-        return response()->json([
-            'success' => true,
-            'message' => 'Municipalidad creada correctamente',
-            'data'    => $m,
-        ], 201);
+            return response()->json([
+                'success' => true,
+                'message' => 'Municipalidad creada correctamente',
+                'data'    => $m,
+            ], 201);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error de validación',
+                'errors' => $e->errors()
+            ], 422);
+        }
     }
 
     public function update(Request $request, $id)
     {
         try {
             $m = Municipalidad::findOrFail($id);
+            $v = $request->validate(Municipalidad::rules($id));
+            $m->update($v);
+            
+            return response()->json([
+                'success' => true,
+                'message' => 'Municipalidad actualizada correctamente',
+                'data'    => $m,
+            ]);
         } catch (ModelNotFoundException $e) {
-            return response()->json(['success'=>false,'message'=>'Municipalidad no encontrada'], 404);
+            return response()->json([
+                'success' => false,
+                'message' => 'Municipalidad no encontrada'
+            ], 404);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error de validación',
+                'errors' => $e->errors()
+            ], 422);
         }
-        $v = $request->validate(Municipalidad::rules($id));
-        $m->update($v);
-        return response()->json([
-            'success' => true,
-            'message' => 'Municipalidad actualizada correctamente',
-            'data'    => $m,
-        ]);
     }
 
     public function destroy($id)
     {
         try {
             $m = Municipalidad::findOrFail($id);
+            $m->delete();
+            
+            return response()->json([
+                'success' => true,
+                'message' => 'Municipalidad eliminada correctamente'
+            ], 204);
         } catch (ModelNotFoundException $e) {
-            return response()->json(['success'=>false,'message'=>'Municipalidad no encontrada'], 404);
+            return response()->json([
+                'success' => false,
+                'message' => 'Municipalidad no encontrada'
+            ], 404);
         }
-        $m->delete();
-        return response()->json([
-            'success' => true,
-            'message' => 'Municipalidad eliminada correctamente',
-        ]);
     }
 }

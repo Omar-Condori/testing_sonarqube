@@ -245,42 +245,33 @@ class AsociacionControllerTest extends TestCase
                 ->assertJsonValidationErrors(['nombre', 'municipalidad_id']);
     }
 
-    #[Test]
+    /** @test */
     public function falla_validacion_con_email_invalido()
     {
-        // Arrange
-        Sanctum::actingAs($this->adminUser);
-        
-        $data = [
-            'nombre' => $this->faker->company,
+        $datos = [
+            'nombre' => 'Asociación Test',
             'email' => 'email-invalido',
-            'municipalidad_id' => $this->municipalidad->id
+            'municipalidad_id' => 1
         ];
 
-        // Act
-        $response = $this->postJson('/api/asociaciones', $data);
+        $response = $this->postJson('/api/v1/asociaciones', $datos);
 
-        // Assert
-        $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY)
+        $response->assertStatus(422)
                 ->assertJsonValidationErrors(['email']);
     }
 
-    #[Test]
+    /** @test */
     public function falla_validacion_con_municipalidad_inexistente()
     {
-        // Arrange
-        Sanctum::actingAs($this->adminUser);
-        
-        $data = [
-            'nombre' => $this->faker->company,
-            'municipalidad_id' => 999999
+        $datos = [
+            'nombre' => 'Asociación Test',
+            'email' => 'test@example.com',
+            'municipalidad_id' => 99999
         ];
 
-        // Act
-        $response = $this->postJson('/api/asociaciones', $data);
+        $response = $this->postJson('/api/v1/asociaciones', $datos);
 
-        // Assert
-        $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY)
+        $response->assertStatus(422)
                 ->assertJsonValidationErrors(['municipalidad_id']);
     }
 

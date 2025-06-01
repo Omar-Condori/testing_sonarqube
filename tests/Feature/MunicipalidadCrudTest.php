@@ -162,6 +162,21 @@ class MunicipalidadCrudTest extends TestCase
     }
 
     /** @test */
+    public function falla_crear_municipalidad_con_datos_invalidos()
+    {
+        $datos = [
+            'nombre' => '',  // Nombre vacío
+            'codigo' => 'TEST001',
+            'departamento' => 'Lima'
+        ];
+
+        $response = $this->postJson('/api/v1/municipalidades', $datos);
+
+        $response->assertStatus(422)
+                ->assertJsonValidationErrors(['nombre', 'provincia', 'distrito']);
+    }
+
+    /** @test */
     public function no_permite_codigo_duplicado()
     {
         Municipalidad::factory()->create(['codigo' => 'DUP001']);
@@ -270,20 +285,5 @@ class MunicipalidadCrudTest extends TestCase
             'codigo' => 'TEST001',
             'nombre' => 'Municipalidad Test'
         ]);
-    }
-
-    /** @test */
-    public function falla_crear_municipalidad_con_datos_invalidos()
-    {
-        $datos = [
-            'nombre' => '',  // Nombre vacío
-            'codigo' => 'TEST001',
-            'departamento' => 'Lima'
-        ];
-
-        $response = $this->postJson('/api/v1/municipalidades', $datos);
-
-        $response->assertStatus(422)
-                ->assertJsonValidationErrors(['nombre', 'provincia', 'distrito']);
     }
 } 
