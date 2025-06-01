@@ -48,22 +48,22 @@ class Municipalidad extends Model
     public static function rules($id = null): array
     {
         return [
-            'nombre'       => 'required|string',
+            'nombre'       => ['required', 'string'],
             'codigo'       => [
-                'required','string',
+                'required', 'string',
                 \Illuminate\Validation\Rule::unique('municipalidades','codigo')->ignore($id),
             ],
-            'departamento' => 'required|string',
-            'provincia'    => 'required|string',
-            'distrito'     => 'required|string',
-            'poblacion'    => 'nullable|integer',
-            'presupuesto'  => 'nullable|numeric',
-            'alcalde'      => 'nullable|string',
-            'telefono'     => 'nullable|string',
-            'email'        => 'nullable|email',
-            'direccion'    => 'nullable|string',
-            'activo'       => 'nullable|boolean',
-            'descripcion'  => 'nullable|string',
+            'departamento' => ['required', 'string'],
+            'provincia'    => ['required', 'string'],
+            'distrito'     => ['required', 'string'],
+            'poblacion'    => ['nullable', 'integer'],
+            'presupuesto'  => ['nullable', 'numeric'],
+            'alcalde'      => ['nullable', 'string'],
+            'telefono'     => ['nullable', 'string'],
+            'email'        => ['nullable', 'email'],
+            'direccion'    => ['nullable', 'string'],
+            'activo'       => ['nullable', 'boolean'],
+            'descripcion'  => ['nullable', 'string'],
         ];
     }
 

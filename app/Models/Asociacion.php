@@ -62,4 +62,17 @@ class Asociacion extends Model
         // Generar URL del almacenamiento
         return url(Storage::url($this->imagen));
     }
+
+    public static function rules($id = null): array
+    {
+        return [
+            'nombre' => ['required', 'string', 'max:255'],
+            'descripcion' => ['nullable', 'string'],
+            'telefono' => ['nullable', 'string', 'max:20'],
+            'email' => ['nullable', 'email', 'max:255'],
+            'municipalidad_id' => ['required', 'exists:municipalidades,id'],
+            'estado' => ['boolean'],
+            'imagen' => ['nullable', 'string'],
+        ];
+    }
 }

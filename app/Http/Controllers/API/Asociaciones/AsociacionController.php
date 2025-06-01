@@ -59,39 +59,22 @@ class AsociacionController extends Controller
     public function store(Request $request)
     {
         try {
-            $validator = Validator::make($request->all(), [
-                'nombre' => 'required|string|max:255',
-                'descripcion' => 'nullable|string',
-                'latitud' => 'nullable|numeric',
-                'longitud' => 'nullable|numeric',
-                'telefono' => 'nullable|string|max:20',
-                'email' => 'nullable|email|max:255',
-                'municipalidad_id' => 'required|exists:municipalidad,id',
-                'estado' => 'boolean',
-                'imagen' => 'nullable|image|max:2048', // 2MB max
-            ]);
-
-            if ($validator->fails()) {
-                return response()->json([
-                    'success' => false,
-                    'message' => 'Error de validación',
-                    'errors' => $validator->errors()
-                ], Response::HTTP_UNPROCESSABLE_ENTITY);
-            }
-
-            $asociacion = $this->asociacionService->create(
-                $request->except('imagen'),
-                $request->hasFile('imagen') ? $request->file('imagen') : null
-            );
+            $validated = $request->validate(\App\Models\Asociacion::rules());
+            $asociacion = $this->asociacionService->create($validated, $request->hasFile('imagen') ? $request->file('imagen') : null);
 
             return response()->json([
                 'success' => true,
                 'message' => 'Asociación creada exitosamente',
                 'data' => $asociacion
             ], Response::HTTP_CREATED);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error de validación',
+                'errors' => $e->errors()
+            ], Response::HTTP_UNPROCESSABLE_ENTITY);
         } catch (\Exception $e) {
-            Log::error('Error al crear asociación: ' . $e->getMessage());
-            
+            \Log::error('Error al crear asociación: ' . $e->getMessage());
             return response()->json([
                 'success' => false,
                 'message' => 'Error al procesar la solicitud: ' . $e->getMessage()
@@ -105,31 +88,8 @@ class AsociacionController extends Controller
     public function update(Request $request, int $id)
     {
         try {
-            $validator = Validator::make($request->all(), [
-                'nombre' => 'sometimes|required|string|max:255',
-                'descripcion' => 'nullable|string',
-                'latitud' => 'nullable|numeric',
-                'longitud' => 'nullable|numeric',
-                'telefono' => 'nullable|string|max:20',
-                'email' => 'nullable|email|max:255',
-                'municipalidad_id' => 'sometimes|required|exists:municipalidad,id',
-                'estado' => 'required|in:0,1,true,false',
-                'imagen' => 'nullable|image|max:2048', // 2MB max
-            ]);
-
-            if ($validator->fails()) {
-                return response()->json([
-                    'success' => false,
-                    'message' => 'Error de validación',
-                    'errors' => $validator->errors()
-                ], Response::HTTP_UNPROCESSABLE_ENTITY);
-            }
-
-            $asociacion = $this->asociacionService->update(
-                $id,
-                $request->except('imagen'),
-                $request->hasFile('imagen') ? $request->file('imagen') : null
-            );
+            $validated = $request->validate(\App\Models\Asociacion::rules($id));
+            $asociacion = $this->asociacionService->update($id, $validated, $request->hasFile('imagen') ? $request->file('imagen') : null);
 
             if (!$asociacion) {
                 return response()->json([
@@ -143,9 +103,14 @@ class AsociacionController extends Controller
                 'message' => 'Asociación actualizada exitosamente',
                 'data' => $asociacion
             ]);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error de validación',
+                'errors' => $e->errors()
+            ], Response::HTTP_UNPROCESSABLE_ENTITY);
         } catch (\Exception $e) {
-            Log::error('Error al actualizar asociación: ' . $e->getMessage());
-            
+            \Log::error('Error al actualizar asociación: ' . $e->getMessage());
             return response()->json([
                 'success' => false,
                 'message' => 'Error al procesar la solicitud: ' . $e->getMessage()
