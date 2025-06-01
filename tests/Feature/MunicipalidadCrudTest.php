@@ -69,7 +69,7 @@ class MunicipalidadCrudTest extends TestCase
                     ]
                 ]);
 
-        $this->assertDatabaseHas('municipalidads', [
+        $this->assertDatabaseHas('municipalidades', [
             'id' => $municipalidad->id,
             'nombre' => 'Nombre Actualizado',
             'alcalde' => 'Nuevo Alcalde'
@@ -89,7 +89,7 @@ class MunicipalidadCrudTest extends TestCase
                     'message' => 'Municipalidad eliminada correctamente'
                 ]);
 
-        $this->assertDatabaseMissing('municipalidads', [
+        $this->assertDatabaseMissing('municipalidades', [
             'id' => $municipalidad->id
         ]);
     }
@@ -266,7 +266,7 @@ class MunicipalidadCrudTest extends TestCase
                     ]
                 ]);
 
-        $this->assertDatabaseHas('municipalidads', [
+        $this->assertDatabaseHas('municipalidades', [
             'codigo' => 'TEST001',
             'nombre' => 'Municipalidad Test'
         ]);

@@ -88,9 +88,9 @@ class MunicipalidadTest extends TestCase
         $this->assertArrayHasKey('provincia', $rules);
         $this->assertArrayHasKey('distrito', $rules);
 
-        $this->assertContains('required', $rules['nombre']);
-        $this->assertContains('required', $rules['codigo']);
-        $this->assertContains('unique',   $rules['codigo']);
+        $this->assertStringContainsString('required', $rules['nombre']);
+        $this->assertStringContainsString('required', $rules['codigo']);
+        $this->assertStringContainsString('unique',   $rules['codigo']);
     }
 
     #[\PHPUnit\Framework\Attributes\Test]

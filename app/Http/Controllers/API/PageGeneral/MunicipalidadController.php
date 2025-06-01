@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API\PageGeneral;
 use App\Http\Controllers\Controller;
 use App\Models\Municipalidad;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class MunicipalidadController extends Controller
 {
@@ -37,8 +38,11 @@ class MunicipalidadController extends Controller
 
     public function show($id)
     {
-        $m = Municipalidad::findOrFail($id);
-
+        try {
+            $m = Municipalidad::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['success'=>false,'message'=>'Municipalidad no encontrada'], 404);
+        }
         return response()->json([
             'success' => true,
             'message' => 'Municipalidad obtenida correctamente',
@@ -60,10 +64,13 @@ class MunicipalidadController extends Controller
 
     public function update(Request $request, $id)
     {
-        $m = Municipalidad::findOrFail($id);
+        try {
+            $m = Municipalidad::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['success'=>false,'message'=>'Municipalidad no encontrada'], 404);
+        }
         $v = $request->validate(Municipalidad::rules($id));
         $m->update($v);
-
         return response()->json([
             'success' => true,
             'message' => 'Municipalidad actualizada correctamente',
@@ -73,9 +80,12 @@ class MunicipalidadController extends Controller
 
     public function destroy($id)
     {
-        $m = Municipalidad::findOrFail($id);
+        try {
+            $m = Municipalidad::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['success'=>false,'message'=>'Municipalidad no encontrada'], 404);
+        }
         $m->delete();
-
         return response()->json([
             'success' => true,
             'message' => 'Municipalidad eliminada correctamente',

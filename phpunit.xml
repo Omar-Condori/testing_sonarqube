@@ -18,9 +18,6 @@
         <report>
             <clover outputFile="coverage/clover.xml"/>
         </report>
-        <driver>
-            <type>pcov</type>
-        </driver>
     </coverage>
     <logging>
         <junit outputFile="coverage/junit.xml"/>
