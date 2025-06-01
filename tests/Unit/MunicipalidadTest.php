@@ -80,7 +80,7 @@ class MunicipalidadTest extends TestCase
     #[\PHPUnit\Framework\Attributes\Test]
     public function reglas_de_validacion_son_correctas(): void
     {
-        $rules = Municipalidad::rules();
+        $rules = \App\Models\Municipalidad::rules();
 
         $this->assertArrayHasKey('nombre', $rules);
         $this->assertArrayHasKey('codigo', $rules);
@@ -93,7 +93,9 @@ class MunicipalidadTest extends TestCase
         
         $this->assertContains('required', $rules['nombre']);
         $this->assertContains('required', $rules['codigo']);
-        $this->assertContains('unique:municipalidades,codigo', $rules['codigo']);
+        $this->assertTrue(collect($rules['codigo'])->contains(function($rule) {
+            return $rule instanceof \Illuminate\Validation\Rules\Unique;
+        }), 'No se encontró la regla unique en codigo');
     }
 
     #[\PHPUnit\Framework\Attributes\Test]

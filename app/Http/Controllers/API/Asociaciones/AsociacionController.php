@@ -88,7 +88,7 @@ class AsociacionController extends Controller
     public function update(Request $request, int $id)
     {
         try {
-            $validated = $request->validate(\App\Models\Asociacion::rules($id));
+            $validated = $request->validate(\App\Models\Asociacion::rules($id, true));
             $asociacion = $this->asociacionService->update($id, $validated, $request->hasFile('imagen') ? $request->file('imagen') : null);
 
             if (!$asociacion) {
