@@ -15,6 +15,9 @@
         </testsuite>
     </testsuites>
     <coverage>
+        <include>
+            <directory suffix=".php">./app</directory>
+        </include>
         <report>
             <clover outputFile="coverage/clover.xml"/>
         </report>
@@ -35,9 +38,4 @@
         <env name="SESSION_DRIVER" value="array"/>
         <env name="TELESCOPE_ENABLED" value="false"/>
     </php>
-    <filter>
-        <whitelist>
-            <directory suffix=".php">./app</directory>
-        </whitelist>
-    </filter>
 </phpunit>

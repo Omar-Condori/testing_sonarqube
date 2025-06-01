@@ -29,18 +29,16 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('SonarQube') {
-                    sh '''
-                        sonar-scanner \
-                            -Dsonar.projectKey=turismo-backend \
-                            -Dsonar.sources=app \
-                            -Dsonar.tests=tests \
-                            -Dsonar.php.coverage.reportPaths=coverage/clover.xml \
-                            -Dsonar.php.tests.reportPath=coverage/junit.xml \
-                            -Dsonar.host.url=$SONAR_HOST_URL \
-                            -Dsonar.login=$SONAR_TOKEN
-                    '''
-                }
+                sh '''
+                    sonar-scanner \
+                        -Dsonar.projectKey=turismo-backend \
+                        -Dsonar.sources=app \
+                        -Dsonar.tests=tests \
+                        -Dsonar.php.coverage.reportPaths=coverage/clover.xml \
+                        -Dsonar.php.tests.reportPath=coverage/junit.xml \
+                        -Dsonar.host.url=$SONAR_HOST_URL \
+                        -Dsonar.login=$SONAR_TOKEN
+                '''
             }
         }
     }
