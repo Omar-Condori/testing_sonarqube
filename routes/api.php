@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\PageGeneral\MunicipalidadController;
 use App\Http\Controllers\API\Dashboard\DashboardController;
+use App\Http\Controllers\API\Asociaciones\AsociacionController;
 use Illuminate\Support\Facades\Route;
 
 // --- RUTAS PÚBLICAS BÁSICAS OMITIDAS ---
